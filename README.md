@@ -35,16 +35,23 @@ eg. /opt/Boomi_AtomSphere/Cloud/Cloud_atom_cloud_01/bin/procworker.sh and add th
 -Dnewrelic.config.app_name=BOOMI_EU_PROD__WORKER
 -javaagent:/home/ec2-user/nr_agent/newrelic/newrelic.jar
 
-# STEP 3: Updated the existing newrelic agent installation with following instrumented jars
+# STEP 3: Update the existing newrelic agent installation with following instrumented jars under extensions folder
 
-Add the following jar files from Release bundle
+Add the following jar files from [Release bundle](https://github.com/gsidhwani-nr/newrelic-boomi-instrumentation/archive/refs/tags/Prod-Release-r1.0.zip) 
 
-boomi-container-execution.jar	
-kafka-clients.jar
-executors-10.jar
-executors-17.jar	
-rmi-stubs.jar
-rmi.jar
-executors-8.jar			
-smallrye-mutiny.jar
-executors-9.jar
+#### Create extensions folder [ if the folder doesn't exist] 
+     E.g. /home/ec2-user/nr_agent/newrelic/extensions
+
+#### boomi-container-execution.jar	
+#### kafka-clients.jar
+#### executors-10.jar
+#### executors-17.jar	
+#### rmi-stubs.jar
+#### rmi.jar
+#### executors-8.jar			
+#### smallrye-mutiny.jar
+#### executors-9.jar
+
+# STEP 4: Restart all the nodes
+
+# STEP 5: Verify the New Relic Platform and check for both ATOM and Worker applications
