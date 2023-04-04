@@ -19,7 +19,7 @@ So, '**Atom Node**' and '**Atom Worker**' where New Relic Agent needs to be depl
 ## Apply Java agent and give App Name
 
 Look for atom.vmoptions in your atom node installation and update javaagent [ _The absolute path must point to your newrelic.jar within the agent installation location_ ] and app name with sudo privileges 
-eg. /opt/Boomi_AtomSphere/Cloud/Cloud_atom_cloud_01/bin/atom.vmoptions and add the following options
+eg. /opt/Boomi_AtomSphere/Cloud/Cloud_atom_cloud_01/bin/atom.vmoptions and add the following options with pre-existing parameters
 
 -Dnewrelic.config.app_name=BOOMI_EU_PROD_ATOM
 -javaagent:/home/ec2-user/nr_agent/newrelic/newrelic.jar
@@ -29,9 +29,22 @@ eg. /opt/Boomi_AtomSphere/Cloud/Cloud_atom_cloud_01/bin/atom.vmoptions and add t
 ## Apply Java agent and give App Name
 
 Look for procworker.sh in your atom node installation and carefully update javaagent and app name with sudo privileges 
-eg. /opt/Boomi_AtomSphere/Cloud/Cloud_atom_cloud_01/bin/procworker.sh
+eg. /opt/Boomi_AtomSphere/Cloud/Cloud_atom_cloud_01/bin/procworker.sh and add the following options with pre-existing parameters
+
+
 -Dnewrelic.config.app_name=BOOMI_EU_PROD__WORKER
 -javaagent:/home/ec2-user/nr_agent/newrelic/newrelic.jar
 
 # STEP 3: Updated the existing newrelic agent installation with following instrumented jars
 
+Add the following jar files from Release bundle
+
+boomi-container-execution.jar	
+kafka-clients.jar
+executors-10.jar
+executors-17.jar	
+rmi-stubs.jar
+rmi.jar
+executors-8.jar			
+smallrye-mutiny.jar
+executors-9.jar
